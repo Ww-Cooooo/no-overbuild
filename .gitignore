@@ -1,0 +1,11 @@
+# Local evaluation output
+evals/results/
+evals/runs/
+
+# Temporary and operating-system files
+tmp/
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+Desktop.ini

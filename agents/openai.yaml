@@ -1,0 +1,6 @@
+interface:
+  display_name: "No Overbuild"
+  short_description: "帮助 Codex 全面思考、精炼实现，避免不必要的过度工程化"
+  default_prompt: "使用 $no-overbuild 设计并完成这个改动：想全必要边界，只落地与真实规模和风险相匹配的方案。"
+policy:
+  allow_implicit_invocation: true

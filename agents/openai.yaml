@@ -1,6 +1,6 @@
 interface:
   display_name: "No Overbuild"
-  short_description: "Think broadly and build only what the real task needs"
-  default_prompt: "Use $no-overbuild to think through the necessary boundaries and deliver the smallest complete solution for the real scale and risk."
+  short_description: "Think broadly. Deliver quality without needless process."
+  default_prompt: "Use $no-overbuild to deliver the agreed quality with comprehensive design, proportionate verification, and local fault recovery—without unnecessary architecture or process."
 policy:
   allow_implicit_invocation: true

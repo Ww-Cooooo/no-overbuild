@@ -2,20 +2,22 @@
 
 # No Overbuild
 
-> Think broadly. Build only what earns its weight. Keep local faults local.
+> Think broadly. Build the product well. Cut needless process, not quality.
 
 Codex can identify many risks, edge cases, and future possibilities. The problem is not thinking too much. The problem begins when every possibility becomes a framework, field, gate, approval step, or large regression suite—until a straightforward project is expensive, brittle, and difficult to change.
 
 No Overbuild is an open Codex Skill. It helps Codex make four balanced decisions while designing, coding, repairing, refactoring, testing, or carrying out technical workflows:
 
-- consider real users, future change, compatibility, recovery, privacy, and failure modes;
-- converge on the smallest complete solution that fits the actual scale and risk;
-- keep recoverable local failures from taking down the whole product or task;
-- preserve necessary safety and validation without turning comprehensive thinking into comprehensive control.
+- **Keep local faults local:** recover safely or isolate the affected part while preserving user work.
+- **Design comprehensively and deliver quality:** fulfill the agreed functionality, visual design, motion, interaction, and other relevant requirements—not a stripped-down substitute.
+- **Verify precisely and keep process practical:** remove low-value tests, unchanged repeat checks, and unnecessary approvals or reports; preserve checks that protect real behavior and data.
+- **Do not turn thinking into control:** use risks to make decisions, not to create a global gate for every possible issue.
 
-It does not mean thinking less or omitting required work. When a high-risk or large-scale system genuinely needs more structure, that complexity should remain—as long as each part owns a concrete responsibility.
+Simplify avoidable burden, not product quality or completeness. Choose tools, dependencies, and abstractions for their real benefit and maintenance cost. A useful framework is not overengineering merely because it adds code; an elaborate process is not valuable merely because it looks rigorous.
 
 For example, if Markdown export occasionally fails in a local tool used by five people, No Overbuild favors fixing the real fault, preserving user work, and containing the failed export. It does not automatically add a message queue, separate database service, event bus, and full observability platform. If the work instead involves orders, permissions, or irreversible data migration, it keeps the transactions, rollback, and validation justified by those risks.
+
+Likewise, when the agreed interface needs polished visuals and meaningful motion, "keep it lightweight" is not permission to deliver a static placeholder. The Skill guides Codex's decisions; it is not an automatic guarantee of the result.
 
 ## Language
 
@@ -105,13 +107,15 @@ You can also describe the development task normally. Codex may select the Skill 
 
 ## How it changes the work
 
-No Overbuild does not prescribe a technology stack or require a separate architecture report. It changes the order of decisions:
+No Overbuild does not prescribe a technology stack or require a separate architecture report. It guides decisions throughout the work:
 
 1. identify the real outcome, users, scale, risks, and existing structure;
 2. think through necessary boundaries without implementing every possibility;
-3. prefer repair and reuse, adding structure only for a real new responsibility;
+3. reuse suitable parts and choose additional tools or structure when their benefit justifies the cost;
 4. make failures recoverable, visible, and as local as possible;
-5. validate with high-information scenarios, scaling the depth of testing to the actual impact and risk.
+5. check the affected behavior and real risks; reuse passing evidence while the relevant work remains unchanged, expanding only for a change, failure, or unresolved doubt.
+
+Relevant domain-specific Skills still apply. No Overbuild must not become an excuse to ignore their valid quality requirements. Hashes establish byte identity, not usability; test counts and repeated reports are not proof of a better product.
 
 ## Boundaries
 
@@ -120,7 +124,7 @@ No Overbuild does not prescribe a technology stack or require a separate archite
 - Only safely recoverable local failures may continue or degrade. Actions that could corrupt state, break correctness, or cause irreversible harm must stop and report the issue.
 - It does not remove necessary features or validation in the name of simplicity.
 - It does not automatically access the network, install dependencies, or modify unrelated projects.
-- This repository contains Skill instructions, display metadata, and three evaluation fixtures made of prompts and expected outcomes. It contains no executable scripts or evaluation runner.
+- This repository contains Skill instructions, display metadata, and five evaluation fixtures made of prompts and expected outcomes. It contains no executable scripts or evaluation runner; the fixtures alone are not evidence of passed behavioral tests.
 
 ## Repository contents
 
@@ -128,7 +132,7 @@ No Overbuild does not prescribe a technology stack or require a separate archite
 | --- | --- |
 | `SKILL.md` | Canonical English entrypoint loaded by Codex after discovery |
 | `agents/openai.yaml` | Display name, short description, and default invocation prompt |
-| `evals/evals.json` | Three representative prompts and expected outcomes for evaluating both overbuilding and underbuilding |
+| `evals/evals.json` | Five representative prompts and expected outcomes, including quality preservation and reuse of valid verification |
 | `README.md` | English project entrypoint |
 | `README.zh-CN.md` | Simplified Chinese documentation |
 

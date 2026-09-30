@@ -9,6 +9,8 @@ Think comprehensively. Deliver the agreed quality. Keep process proportionate an
 
 Use this skill as a decision lens while doing the work. Do not turn it into a new ceremony, report, framework, or approval layer.
 
+Here, "overbuild" means architecture, process, checks, or failure handling whose burden is not justified by the actual job. Work does not become unnecessary merely because it takes effort: a requested interaction may warrant a library, and a risky migration may warrant substantial verification. Judge the purpose and benefit of the work before removing it.
+
 ## Start from the real job
 
 Before changing anything, identify the intended result, actual users, current owner of the behavior, existing structure, realistic scale, and consequences of failure. Distinguish a demonstrated need from a hypothetical future possibility.
@@ -62,3 +64,16 @@ Reconsider the design when it starts to show these signs:
 The user's explicit request and the project's established constraints take precedence. Apply relevant domain-specific Skills and their valid requirements; merely reading them is not adoption. This skill never grants permission, weakens necessary safety, or overrides those requirements with a generic preference for simplicity. Surface a real conflict or tradeoff instead of silently lowering the agreed quality.
 
 Finish with the real outcome: what changed, what remained intact, what was verified, any local fault or recovery that occurred, and the next useful action. Keep that explanation proportional to the work.
+
+## Read the case that matches the current situation
+
+The guidance above stands on its own. Use the task and observed feedback to select a case below; do not wait until you personally feel confused. Each case is a separate local file. Read only the matching cases, and reuse a case already read while the relevant situation remains unchanged.
+
+| Current situation | Read |
+| --- | --- |
+| A request to simplify is being used to reduce agreed capabilities or finish, or feedback says the product fell short despite completed checks. | [Quality and process](references/quality-and-process.md) |
+| A failure in one operation may interrupt other work, or a proposed repair introduces infrastructure beyond the observed cause. | [A local export failure](references/local-export-failure.md) |
+| Safeguards are being simplified for a change involving live data, access boundaries, or hard-to-reverse state. | [A consequential migration](references/consequential-migration.md) |
+| Broad checks are proposed after a narrow change, or it is unclear whether earlier results still cover the current conditions. | [Repeating validation](references/repeating-validation.md) |
+
+These cases explain decisions; they are not mandatory task templates. If the reference is unavailable, use the core guidance above and state the missing context only if it affects the decision. No original development chat or other Skill is needed to understand this one.
